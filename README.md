@@ -17,6 +17,14 @@ In order to configure the node, copy the `config-example` directory into `config
 cp -rf config-example config
 ```
 
+## Building the image
+
+If you want to build the image, run the following command:
+
+```bash
+$ docker build -t eidas-node .
+```
+
 ## Using the image
 
 You can use the image with the `docker-compose.yml` file:
@@ -39,10 +47,4 @@ If you want to stop the node, run:
 docker compose down
 ```
 
-## Building the image
 
-If you want to build the image, run the following command:
-
-```bash
-$ docker build -t eidas-node .
-```
