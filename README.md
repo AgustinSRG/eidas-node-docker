@@ -17,12 +17,19 @@ In order to configure the node, copy the `config-example` directory into `config
 cp -rf config-example config
 ```
 
-## Building the image
+## Building or pulling the image
 
 If you want to build the image, run the following command:
 
-```bash
-$ docker build -t eidas-node .
+```sh
+docker build -t eidas-node .
+```
+
+If you prefer using a pre-uploaded image, you can pull it from [Docker Hub](https://hub.docker.com/r/asanrom/eidas-node)
+
+```sh
+docker pull asanrom/eidas-node
+docker tag asanrom/eidas-node eidas-node
 ```
 
 ## Using the image
