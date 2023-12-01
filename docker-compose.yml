@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  # Blockchain
+
+  eidas:
+    hostname: eidas
+    ports:
+      - '8085:8085'
+    image: 'ghcr.io/agustinsrg/eidas-node'
+    restart: unless-stopped
+    volumes:
+      - ./config/eidas:/config/eidas
+    
