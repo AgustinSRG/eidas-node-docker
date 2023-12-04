@@ -62,7 +62,7 @@ RUN mkdir -p /config/eidas/specificProxyService && \
     cp -r /tmp/AdditionalFiles/${LATEST_ADDITIONAL_FILES}/* /opt/jboss/wildfly/modules/system/layers/base/ && \
     rm -r /tmp/AdditionalFiles/ && \
     # See also https://apacheignite.readme.io/docs/getting-started#running-ignite-with-java-11-and-later-versions regarding add-exports
-    printf '\nJAVA_OPTS=\"$JAVA_OPTS $JAVA_OPTS_CUSTOM -Xms512m -Xmx1024m -Djdk.tls.client.protocols=TLSv1.2 -Djboss.http.port=8085 --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED --illegal-access=permit\"' \
+    printf '\nJAVA_OPTS=\"$JAVA_OPTS $JAVA_OPTS_CUSTOM -Djdk.tls.client.protocols=TLSv1.2 -Djboss.http.port=8085 --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED --illegal-access=permit\"' \
       >> /opt/jboss/wildfly/bin/standalone.conf && \
     # Provide Bouncycastle Module and overwrite security providers
     printf '\nJAVA_OPTS=\"$JAVA_OPTS -Djava.security.properties=/etc/java/security/java_bc.security --module-path /usr/local/lib/bcprov-jdk18on-172.jar --add-modules org.bouncycastle.provider\"\n' \
