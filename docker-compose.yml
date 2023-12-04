@@ -12,4 +12,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./config/eidas:/config/eidas
+    environment:
+      JAVA_OPTS_CUSTOM: -Xms2G -Xmx4G
     
