@@ -13,5 +13,5 @@ services:
     volumes:
       - ./config/eidas:/config/eidas
     environment:
-      JAVA_OPTS_CUSTOM: -Xms2G -Xmx4G
+      JAVA_OPTS_CUSTOM: -Xms256M -Xmx4G
     
